@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const date = prompt('Enter pickup date (MM/DD/YYYY):');
         if (date) {
           this.innerHTML = `
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 h-4 w-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
               <rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect>
               <line x1="16" x2="16" y1="2" y2="6"></line>
               <line x1="8" x2="8" y1="2" y2="6"></line>
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const date = prompt('Enter return date (MM/DD/YYYY):');
         if (date) {
           this.innerHTML = `
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 h-4 w-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
               <rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect>
               <line x1="16" x2="16" y1="2" y2="6"></line>
               <line x1="8" x2="8" y1="2" y2="6"></line>
@@ -69,8 +69,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   
     // Newsletter subscription
-    const newsletterForm = document.querySelector('.card input[type="email"]');
-    const subscribeBtn = document.querySelector('.card .btn-primary');
+    const newsletterForm = document.querySelector('.newsletter-form input[type="email"]');
+    const subscribeBtn = document.querySelector('.newsletter-form .btn-primary');
     
     if (newsletterForm && subscribeBtn) {
       subscribeBtn.addEventListener('click', function() {
@@ -91,11 +91,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   
     // Car cards hover effect
-    const carCards = document.querySelectorAll('.card');
+    const carCards = document.querySelectorAll('.car-card');
     carCards.forEach(card => {
       card.addEventListener('mouseenter', function() {
         this.style.transform = 'translateY(-5px)';
-        this.style.transition = 'transform 0.3s ease';
         this.style.boxShadow = '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
       });
       
@@ -106,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   
     // Sticky header effect
-    const header = document.querySelector('header');
+    const header = document.querySelector('.site-header');
     let lastScrollTop = 0;
     
     window.addEventListener('scroll', function() {
@@ -129,7 +128,4 @@ document.addEventListener('DOMContentLoaded', function() {
       
       lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     }, false);
-  
-    // Initialize header state
-    header.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
   });

@@ -1,0 +1,170 @@
+/* Reset some default styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body {
+    background: linear-gradient(to right, #dfe9f3, #ffffff);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container {
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    width: 900px;
+    max-width: 100%;
+    min-height: 550px;
+    overflow: hidden;
+    display: flex;
+  }
+  
+  .form-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+  }
+  
+  .sign-in {
+    left: 0;
+    width: 50%;
+    z-index: 2;
+  }
+  
+  .sign-up {
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+  }
+  
+  .container.right-panel-active .sign-in {
+    transform: translateX(100%);
+  }
+  
+  .container.right-panel-active .sign-up {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+  }
+  
+  form {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding: 0 50px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+  }
+  
+  h1 {
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  input {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  button {
+    border-radius: 20px;
+    border: none;
+    background-color: #512da8;
+    color: #fff;
+    font-size: 14px;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    transition: transform 80ms ease-in;
+    cursor: pointer;
+  }
+  
+  button.hidden {
+    background-color: transparent;
+    border: 1px solid #fff;
+  }
+  
+  button:hover {
+    background-color: #3d1e78;
+  }
+  
+  .social-icons {
+    margin: 10px 0;
+  }
+  
+  .icon {
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+    height: 40px;
+    width: 40px;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.3s;
+  }
+  
+  .icon:hover {
+    background-color: #eee;
+  }
+  
+  .toggle-container {
+    border-top-left-radius: 6rem;
+    border-bottom-left-radius: 6rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    background: linear-gradient(to top right, #673ab7, #512da8);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px;
+  }
+  
+  .toggle-panel {
+    text-align: center;
+  }
+  
+  .toggle-panel h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .toggle-panel p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+  
+  a {
+    color: #333;
+    font-size: 12px;
+    text-decoration: none;
+    margin-top: 10px;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
