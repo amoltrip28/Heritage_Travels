@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heritage Travels - Car Rental Platform</title>
+  <link href="index.css" rel="stylesheet">
+</head>
+<body class="min-h-screen flex flex-col">
+  <header class="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur">
+    <div class="container mx-auto flex h-16 items-center justify-between px-4">
+      <a href="/" class="flex items-center gap-2 text-xl font-bold">
+        <span class="text-primary">Heritage Travels</span>
+      </a>
+      <nav class="hidden md:flex gap-6">
+        <a href="/" class="text-sm font-medium hover:text-primary">Home</a>
+        <a href="cars.html" class="text-sm font-medium hover:text-primary">Cars</a>
+        <a href="drivers.html" class="text-sm font-medium hover:text-primary">Become a Driver</a>
+        <a href="about.html" class="text-sm font-medium hover:text-primary">About Us</a>
+        <a href="contact.html" class="text-sm font-medium hover:text-primary">Contact</a>
+      </nav>
+      <div class="flex items-center gap-4">
+        <a href="login.html" class="btn btn-outline btn-sm">
+          Log in
+        </a>
+        <a href="signup.html" class="btn btn-primary btn-sm">
+          Sign up
+        </a>
+        <button class="btn btn-ghost btn-icon md:hidden" id="mobile-menu-toggle">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
+            <line x1="4" x2="20" y1="12" y2="12"></line>
+            <line x1="4" x2="20" y1="6" y2="6"></line>
+            <line x1="4" x2="20" y1="18" y2="18"></line>
+          </svg>
+          <span class="sr-only">Toggle menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-1">
+    <!-- Hero Section -->
+    <section class="relative">
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent to-background/80 z-10"></div>
+      <div class="h-[600px] bg-cover bg-center" style="background-image: url('front-background.jpg')">
+        <div class="container mx-auto relative z-20 flex h-full flex-col items-center justify-center text-center px-4">
+          <div class="mx-auto max-w-3xl space-y-4">
+            <h1 class="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-md" style="color: black;">
+              Rent a Car Directly from Drivers
+            </h1>
+            <p class="mx-auto max-w-[700px] text-lg text-white/90 md:text-xl drop-shadow-md">
+              Find the perfect car for your needs and connect directly with local drivers for the best rates.
+            </p>
+          </div>
+          
+          <div class="mt-8 w-full max-w-4xl">
+            <div class="rounded-lg bg-card shadow-lg">
+              <div class="grid gap-6 p-6 sm:grid-cols-2 md:grid-cols-4">
+                <div class="space-y-2">
+                  <label for="location" class="text-sm font-medium leading-none">Pickup Location</label>
+                  <div class="relative">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute left-3 top-3 h-4 w-4 text-muted-foreground">
+                      <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <input id="location" placeholder="Enter city or address" class="input pl-9">
+                  </div>
+                </div>
+                
+                <div class="space-y-2">
+                  <label class="text-sm font-medium leading-none">Pickup Date</label>
+                  <button class="date-picker-btn" id="pickup-date">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 h-4 w-4">
+                      <rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect>
+                      <line x1="16" x2="16" y1="2" y2="6"></line>
+                      <line x1="8" x2="8" y1="2" y2="6"></line>
+                      <line x1="3" x2="21" y1="10" y2="10"></line>
+                    </svg>
+                    Select date
+                  </button>
+                </div>
+                
+                <div class="space-y-2">
+                  <label class="text-sm font-medium leading-none">Return Date</label>
+                  <button class="date-picker-btn" id="return-date">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 h-4 w-4">
+                      <rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect>
+                      <line x1="16" x2="16" y1="2" y2="6"></line>
+                      <line x1="8" x2="8" y1="2" y2="6"></line>
+                      <line x1="3" x2="21" y1="10" y2="10"></line>
+                    </svg>
+                    Select date
+                  </button>
+                </div>
+                
+                <div class="space-y-2">
+                  <label for="car-type" class="text-sm font-medium leading-none">Car Type</label>
+                  <select id="car-type" class="select">
+                    <option value="">Any type</option>
+                    <option value="sedan">Sedan</option>
+                    <option value="suv">SUV</option>
+                    <option value="luxury">Luxury</option>
+                    <option value="compact">Compact</option>
+                    <option value="van">Van</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div class="border-t p-6">
+                <button class="btn btn-primary btn-lg w-full sm:w-auto" id="search-cars-btn">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 h-4 w-4">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.3-4.3"></path>
+                  </svg>
+                  Search Cars
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="container mx-auto py-12 md:py-24 lg:py-32 px-4">
+      <div class="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center">
+        <h2 class="text-3xl font-bold leading-[1.1] sm:text-3xl md:text-5xl">Find Your Perfect Ride</h2>
+        <p class="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
+          Search from our wide range of cars and connect directly with drivers in your area.
+        </p>
+      </div>
+      
+      <div class="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
+        <div class="grid gap-4">
+          <div class="grid gap-2">
+            <h3 class="text-xl font-bold">For Customers</h3>
+            <p class="text-muted-foreground">
+              Book cars directly from local drivers. No middlemen, better prices.
+            </p>
+          </div>
+          <div class="grid gap-2">
+            <div class="flex items-center gap-2">
+              <div class="flex h-8 w-8 items-center justify-center rounded-full border">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span>Wide selection of vehicles</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="flex h-8 w-8 items-center justify-center rounded-full border">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span>Direct contact with drivers</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="flex h-8 w-8 items-center justify-center rounded-full border">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span>Competitive pricing</span>
+            </div>
+          </div>
+          <div>
+            <a href="cars.html" class="btn btn-primary">
+              Browse Cars
+            </a>
+          </div>
+        </div>
+        <div class="grid gap-4">
+          <div class="grid gap-2">
+            <h3 class="text-xl font-bold">For Drivers</h3>
+            <p class="text-muted-foreground">
+              Register your car and earn by renting it out when you're not using it.
+            </p>
+          </div>
+          <div class="grid gap-2">
+            <div class="flex items-center gap-2">
+              <div class="flex h-8 w-8 items-center justify-center rounded-full border">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span>Easy registration process</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="flex h-8 w-8 items-center justify-center rounded-full border">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span>Set your own availability and rates</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="flex h-8 w-8 items-center justify-center rounded-full border">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span>Earn extra income from your vehicle</span>
+            </div>
+          </div>
+          <div>
+            <a href="drivers.html" class="btn btn-primary">
+              Register as Driver
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Cars Section -->
+    <section class="container mx-auto py-12 md:py-24 px-4">
+      <div class="flex flex-col items-center justify-between gap-4 md:flex-row">
+        <div>
+          <h2 class="text-3xl font-bold tracking-tighter md:text-4xl">Featured Cars</h2>
+          <p class="text-muted-foreground">Discover our most popular rental options</p>
+        </div>
+        <a href="cars.html" class="btn btn-outline">
+          View all cars
+        </a>
+      </div>
+      
+      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <!-- Car Card 1 -->
+        <div class="card">
+          <div class="relative">
+            <div class="aspect-[3/2] w-full">
+              <img src="Ertiga.jpg" alt="Toyota Camry" class="object-cover w-full h-full">
+            </div>
+            <div class="badge badge-primary absolute right-2 top-2">
+              Featured
+            </div>
+          </div>
+          <div class="p-4">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <h3 class="font-bold">Toyota Camry</h3>
+                <div class="flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1 h-4 w-4 text-primary">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
+                  <span class="text-sm font-medium">4.8</span>
+                  <span class="text-xs text-muted-foreground">(124)</span>
+                </div>
+              </div>
+              <p class="text-sm text-muted-foreground">New York City</p>
+              <div class="flex flex-wrap gap-2 pt-2">
+                <div class="flex items-center text-xs">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1 h-3 w-3">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                  5 seats
+                </div>
+                <div class="flex items-center text-xs">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1 h-3 w-3">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                  </svg>
+                  Hybrid
+                </div>
+                <div class="flex items-center text-xs">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1 h-3 w-3">
+                    <rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect>
+                    <line x1="16" x2="16" y1="2" y2="6"></line>
+                    <line x1="8" x2="8" y1="2" y2="6"></line>
+                    <line x1="3" x2="21" y1="10" y2="10"></line>
+                  </svg>
+                  2022
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center justify-between border-t p-4">
+            <div>
+              <span class="text-xl font-bold">$45</span>
+              <span class="text-sm text-muted-foreground"> / day</span>
+            </div>
+            <a href="car-details.html?id=1" class="btn btn-primary btn-sm">
+              Book Now
+            </a>
+          </div>
+        </div>
+
+        <!-- Car Card 2 -->
+        <div class="card">
+          <div class="relative">
+            <div class="aspect-[3/2] w-full">
+              <img src="https://placehold.co/300x200" alt="Honda CR-V" class="object-cover w-full h-full">
+            </div>
+          </div>
+          <div class="p-4">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <h3 class="font-bold">Honda CR-V</h3>
+                <div class="flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1 h-4 w-4 text-primary">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
+                  <span class="text-sm font-medium">4.7</span>
+                  <span class="text-xs text-muted-foreground">(98)</span>
+                </div>
+              </div>
+              <p class="text-sm text-muted-foreground">Los Angeles</p>
+              <div class="flex flex-wrap gap-2 pt-2">
+                <div class="flex items-center text-xs">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1 h-3 w-3">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                  5 seats
+                </div>
+                <div class="flex items-center text-xs">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1 h-3 w-3">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                  </svg>
+                  Gasoline
+                </div>
+                <div class="flex items-center text-xs">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1 h-3 w-3">
+                    <rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect>
+                    <line x1="16" x2="16" y1="2" y2="6"></line>
+                    <line x1="8" x2="8" y1="2" y2="6"></line>
+                    <line x1="3" x2="21" y1="10" y2="10"></line>
+                  </svg>
+                  2021
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center justify-between border-t p-4">
+            <div>
+              <span class="text-xl font-bold">$55</span>
+              <span class="text-sm text-muted-foreground"> / day</span>
+            </div>
+            <a href="car-details.html?id=2" class="btn btn-primary btn-sm">
+              Book Now
+            </a>
+          </div>
+        </div>
+
+        <!-- Car Card 3 -->
+        <div class="card">
+          <div class="relative">
+            <div class="aspect-[3/2] w-full">
+              <img src="https://placehold.co/300x200" alt="Tesla Model 3" class="object-cover w-full h-full">
+            </div>
+            <div class="badge badge-primary absolute right-2 top-2">
+              Featured
+            </div>
+          </div>
+          <div class="p-4">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <h3 class="font-bold">Tesla Model 3</h3>
+                <div class="flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1 h-4 w-4 text-primary">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
+                  <span class="text-sm font-medium">4.9</span>
+                  <span class="text-xs text-muted-foreground">(156)</span>
+                </div>
+              </div>
+              <p class="text-sm text-muted-foreground">San Francisco</p>
+              <div class="flex flex-wrap gap-2 pt-2">
+                <div class="flex items-center text-xs">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1 h-3 w-3">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                  5 seats
+                </div>
+                <div class="flex items-center text-xs">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1 h-3 w-3">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                  </svg>
+                  Electric
+                </div>
+                <div class="flex items-center text-xs">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1 h-3 w-3">
+                    <rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect>
+                    <line x1="16" x2="16" y1="2" y2="6"></line>
+                    <line x1="8" x2="8" y1="2" y2="6"></line>
+                    <line x1="3" x2="21" y1="10" y2="10"></line>
+                  </svg>
+                  2023
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center justify-between border-t p-4">
+            <div>
+              <span class="text-xl font-bold">$75</span>
+              <span class="text-sm text-muted-foreground"> / day</span>
+            </div>
+            <a href="car-details.html?id=3" class="btn btn-primary btn-sm">
+              Book Now
+            </a>
+          </div>
+        </div>
+
+        <!-- Car Card 4 -->
+        <div class="card">
+          <div class="relative">
+            <div class="aspect-[3/2] w-full">
+              <img src="https://placehold.co/300x200" alt="Ford Mustang" class="object-cover w-full h-full">
+            </div>
+          </div>
+          <div class="p-4">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <h3 class="font-bold">Ford Mustang</h3>
+                <div class="flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1 h-4 w-4 text-primary">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
+                  <span class="text-sm font-medium">4.6</span>
+                  <span class="text-xs text-muted-foreground">(87)</span>
+                </div>
+              </div>
+              <p class="text-sm text-muted-foreground">Miami</p>
+              <div class="flex flex-wrap gap-2 pt-2">
+                <div class="flex items-center text-xs">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1 h-3 w-3">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                  4 seats
+                </div>
+                <div class="flex items-center text-xs">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1 h-3 w-3">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                  </svg>
+                  Gasoline
+                </div>
+                <div class="flex items-center text-xs">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1 h-3 w-3">
+                    <rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect>
+                    <line x1="16" x2="16" y1="2" y2="6"></line>
+                    <line x1="8" x2="8" y1="2" y2="6"></line>
+                    <line x1="3" x2="21" y1="10" y2="10"></line>
+                  </svg>
+                  2022
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center justify-between border-t p-4">
+            <div>
+              <span class="text-xl font-bold">$85</span>
+              <span class="text-sm text-muted-foreground"> / day</span>
+            </div>
+            <a href="car-details.html?id=4" class="btn btn-primary btn-sm">
+              Book Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="container mx-auto py-12 md:py-24 px-4">
+      <div class="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center">
+        <h2 class="text-3xl font-bold leading-[1.1] sm:text-3xl md:text-5xl">How It Works</h2>
+        <p class="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
+          Our platform connects drivers and customers directly, making car rentals easier than ever.
+        </p>
+      </div>
+      
+      <div class="mx-auto mt-16 grid max-w-5xl gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div class="flex flex-col items-center text-center">
+          <div class="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8">
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.3-4.3"></path>
+            </svg>
+          </div>
+          <h3 class="mt-4 text-xl font-bold">1. Search</h3>
+          <p class="mt-2 text-sm text-muted-foreground">
+            Browse available cars in your area and find the perfect match for your needs.
+          </p>
+        </div>
+        
+        <div class="flex flex-col items-center text-center">
+          <div class="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <h3 class="mt-4 text-xl font-bold">2. Connect</h3>
+          <p class="mt-2 text-sm text-muted-foreground">
+            Connect directly with the car owner through our secure platform.
+          </p>
+        </div>
+        
+        <div class="flex flex-col items-center text-center">
+          <div class="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+          </div>
+          <h3 class="mt-4 text-xl font-bold">3. Book</h3>
+          <p class="mt-2 text-sm text-muted-foreground">
+            Book your rental by contacting us with your preferred dates and details.
+          </p>
+        </div>
+        
+        <div class="flex flex-col items-center text-center">
+          <div class="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8">
+              <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.6-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.5 2.8C1.4 11.3 1 12.1 1 13v3c0 .6.4 1 1 1h2"></path>
+              <circle cx="7" cy="17" r="2"></circle>
+              <path d="M9 17h6"></path>
+              <circle cx="17" cy="17" r="2"></circle>
+            </svg>
+          </div>
+          <h3 class="mt-4 text-xl font-bold">4. Drive</h3>
+          <p class="mt-2 text-sm text-muted-foreground">
+            Pick up your car and enjoy your journey with peace of mind.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="bg-muted py-12 md:py-24">
+      <div class="container mx-auto px-4">
+        <div class="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center">
+          <h2 class="text-3xl font-bold leading-[1.1] sm:text-3xl md:text-5xl">What Our Users Say</h2>
+          <p class="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
+            Don't just take our word for it. Here's what customers and drivers think about our platform.
+          </p>
+        </div>
+        
+        <div class="mx-auto mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <!-- Testimonial 1 -->
+          <div class="rounded-lg border-0 bg-background p-6">
+            <div class="flex items-center gap-4">
+              <div class="relative h-12 w-12 overflow-hidden rounded-full">
+                <img src="https://placehold.co/80x80" alt="Sarah Johnson" class="object-cover w-full h-full">
+              </div>
+              <div>
+                <h3 class="font-semibold">Sarah Johnson</h3>
+                <p class="text-sm text-muted-foreground">Customer</p>
+              </div>
+            </div>
+            <div class="mt-4 flex">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-primary">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-primary">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-primary">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-primary">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-primary">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+            </div>
+            <blockquote class="mt-4 border-l-2 pl-4 text-muted-foreground">
+              "I was able to find a car for my weekend trip at a much better price than traditional rental companies. The direct contact with the driver made the whole process so much easier!"
+            </blockquote>
+          </div>
+          
+          <!-- Testimonial 2 -->
+          <div class="rounded-lg border-0 bg-background p-6">
+            <div class="flex items-center gap-4">
+              <div class="relative h-12 w-12 overflow-hidden rounded-full">
+                <img src="https://placehold.co/80x80" alt="Michael Chen" class="object-cover w-full h-full">
+              </div>
+              <div>
+                <h3 class="font-semibold">Michael Chen</h3>
+                <p class="text-sm text-muted-foreground">Driver</p>
+              </div>
+            </div>
+            <div class="mt-4 flex">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-primary">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-primary">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-primary">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-primary">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-primary">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+            </div>
+            <blockquote class="mt-4 border-l-2 pl-4 text-muted-foreground">
+              "As a driver, this platform has allowed me to earn extra income from my car when I'm not using it. The registration process was simple and I've met great customers."
+            </blockquote>
+          </div>
+          
+          <!-- Testimonial 3 -->
+          <div class="rounded-lg border-0 bg-background p-6">
+            <div class="flex items-center gap-4">
+              <div class="relative h-12 w-12 overflow-hidden rounded-full">
+                <img src="https://placehold.co/80x80" alt="Emily Rodriguez" class="object-cover w-full h-full">
+              </div>
+              <div>
+                <h3 class="font-semibold">Emily Rodriguez</h3>
+                <p class="text-sm text-muted-foreground">Customer</p>
+              </div>
+            </div>
+            <div class="mt-4 flex">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-primary">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-primary">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-primary">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-primary">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-muted-foreground">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+            </div>
+            <blockquote class="mt-4 border-l-2 pl-4 text-muted-foreground">
+              "I needed a specific type of car for a family event and found exactly what I was looking for. The booking process was straightforward and the car was in perfect condition."
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-muted py-12 md:py-24 lg:py-32">
+      <div class="container mx-auto px-4 md:px-6">
+        <div class="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
+          <div>
+            <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+              Ready to get started?
+            </h2>
+            <p class="mt-4 text-muted-foreground">
+              Join our platform today and experience the future of car rentals. Whether you're looking to rent a car or
+              register your vehicle, we've got you covered.
+            </p>
+            <div class="mt-6 flex flex-col gap-2 sm:flex-row">
+              <a href="signup.html" class="btn btn-primary btn-lg">
+                Sign up now
+              </a>
+              <a href="contact.html" class="btn btn-outline btn-lg">
+                Contact us
+              </a>
+            </div>
+          </div>
+          <div class="flex justify-center">
+            <div class="card w-full max-w-md">
+              <div class="p-6">
+                <div class="grid gap-4">
+                  <div class="grid gap-2">
+                    <h3 class="text-xl font-bold">Subscribe to our newsletter</h3>
+                    <p class="text-sm text-muted-foreground">
+                      Stay updated with the latest cars and offers.
+                    </p>
+                  </div>
+                  <div class="grid gap-2">
+                    <div class="flex gap-2">
+                      <input placeholder="Enter your email" type="email" class="input">
+                      <button class="btn btn-primary">
+                        Subscribe
+                      </button>
+                    </div>
+                    <p class="text-xs text-muted-foreground">
+                      By subscribing, you agree to our Terms of Service and Privacy Policy.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="border-t py-6 md:py-0">
+    <div class="container mx-auto flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row px-4">
+      <p class="text-center text-sm leading-loose text-muted-foreground md:text-left">
+        © 2025 Heritage Travels. All rights reserved.
+      </p>
+      <div class="flex gap-4">
+        <a href="terms.html" class="text-sm text-muted-foreground hover:text-foreground">
+          Terms
+        </a>
+        <a href="privacy.html" class="text-sm text-muted-foreground hover:text-foreground">
+          Privacy
+        </a>
+        <a href="contact.html" class="text-sm text-muted-foreground hover:text-foreground">
+          Contact
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="index.css"></script>
+</body>
+</html>
