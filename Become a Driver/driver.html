@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Become a Driver - Heritage Travels</title>
+  <link href="/index.css" rel="stylesheet">
+  <link href="driver.css" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="/" class="logo">
+        <span>Heritage Travels</span>
+      </a>
+      <nav class="main-nav">
+        <a href="/" class="nav-link">Home</a>
+        <a href="cars.html" class="nav-link">Cars</a>
+        <a href="drivers.html" class="nav-link active">Become a Driver</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <a href="login.html" class="btn btn-outline">
+          Log in
+        </a>
+        <a href="signup.html" class="btn btn-primary">
+          Sign up
+        </a>
+        <button class="btn-menu-toggle" id="mobile-menu-toggle">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" x2="20" y1="12" y2="12"></line>
+            <line x1="4" x2="20" y1="6" y2="6"></line>
+            <line x1="4" x2="20" y1="18" y2="18"></line>
+          </svg>
+          <span class="sr-only">Toggle menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="driver-hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content container">
+        <div class="hero-text">
+          <h1>Become a Driver Partner</h1>
+          <p>Register your vehicle and start earning by renting it out when you're not using it.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Registration Form Section -->
+    <section class="registration-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Driver Registration</h2>
+          <p>Fill out the form below to register as a driver on our platform. We'll review your information and get back to you within 24-48 hours.</p>
+        </div>
+        
+        <div class="registration-container">
+          <form id="driver-registration-form" class="registration-form">
+            <div class="form-section">
+              <h3>Personal Information</h3>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="first-name">First Name *</label>
+                  <input type="text" id="first-name" name="first-name" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="last-name">Last Name *</label>
+                  <input type="text" id="last-name" name="last-name" class="form-input" required>
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="email">Email Address *</label>
+                  <input type="email" id="email" name="email" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="phone">Phone Number *</label>
+                  <input type="tel" id="phone" name="phone" class="form-input" required>
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="dob">Date of Birth *</label>
+                  <input type="date" id="dob" name="dob" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="address">Full Address *</label>
+                  <input type="text" id="address" name="address" class="form-input" required>
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="city">City *</label>
+                  <input type="text" id="city" name="city" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="state">State *</label>
+                  <input type="text" id="state" name="state" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="zip">Postal Code *</label>
+                  <input type="text" id="zip" name="zip" class="form-input" required>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-section">
+              <h3>Driver's License Information</h3>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="license-number">License Number *</label>
+                  <input type="text" id="license-number" name="license-number" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="license-state">Issuing State *</label>
+                  <input type="text" id="license-state" name="license-state" class="form-input" required>
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="license-expiry">Expiration Date *</label>
+                  <input type="date" id="license-expiry" name="license-expiry" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="license-image">Upload License Image (Front & Back) *</label>
+                  <input type="file" id="license-image" name="license-image" class="form-input file-input" accept="image/*" multiple required>
+                  <p class="input-help">Please upload clear images of both sides of your driver's license</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-section">
+              <h3>Vehicle Information</h3>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="vehicle-make">Make *</label>
+                  <input type="text" id="vehicle-make" name="vehicle-make" class="form-input" placeholder="e.g., Toyota" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="vehicle-model">Model *</label>
+                  <input type="text" id="vehicle-model" name="vehicle-model" class="form-input" placeholder="e.g., Camry" required>
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="vehicle-year">Year *</label>
+                  <input type="number" id="vehicle-year" name="vehicle-year" class="form-input" min="1990" max="2025" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="vehicle-color">Color *</label>
+                  <input type="text" id="vehicle-color" name="vehicle-color" class="form-input" required>
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="vehicle-type">Vehicle Type *</label>
+                  <select id="vehicle-type" name="vehicle-type" class="form-select" required>
+                    <option value="">Select vehicle type</option>
+                    <option value="sedan">Sedan</option>
+                    <option value="suv">SUV</option>
+                    <option value="hatchback">Hatchback</option>
+                    <option value="minivan">Minivan</option>
+                    <option value="luxury">Luxury</option>
+                    <option value="convertible">Convertible</option>
+                    <option value="pickup">Pickup Truck</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                
+                <div class="form-group">
+                  <label for="vehicle-seats">Number of Seats *</label>
+                  <select id="vehicle-seats" name="vehicle-seats" class="form-select" required>
+                    <option value="">Select number of seats</option>
+                    <option value="2">2</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8+">8+</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="license-plate">License Plate Number *</label>
+                  <input type="text" id="license-plate" name="license-plate" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="registration-number">Registration Number *</label>
+                  <input type="text" id="registration-number" name="registration-number" class="form-input" required>
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="registration-expiry">Registration Expiry Date *</label>
+                  <input type="date" id="registration-expiry" name="registration-expiry" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="insurance-provider">Insurance Provider *</label>
+                  <input type="text" id="insurance-provider" name="insurance-provider" class="form-input" required>
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="insurance-policy">Insurance Policy Number *</label>
+                  <input type="text" id="insurance-policy" name="insurance-policy" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="insurance-expiry">Insurance Expiry Date *</label>
+                  <input type="date" id="insurance-expiry" name="insurance-expiry" class="form-input" required>
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="vehicle-images">Upload Vehicle Images *</label>
+                  <input type="file" id="vehicle-images" name="vehicle-images" class="form-input file-input" accept="image/*" multiple required>
+                  <p class="input-help">Please upload at least 4 images (exterior front, back, both sides, and interior)</p>
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="vehicle-documents">Upload Vehicle Registration & Insurance *</label>
+                  <input type="file" id="vehicle-documents" name="vehicle-documents" class="form-input file-input" accept=".pdf,.jpg,.jpeg,.png" multiple required>
+                  <p class="input-help">Please upload clear images of your vehicle registration and insurance documents</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-section">
+              <h3>Rental Details</h3>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="rate-per-km">Rate per Kilometer (in local currency) *</label>
+                  <input type="number" id="rate-per-km" name="rate-per-km" class="form-input" min="1" step="0.01" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="rate-per-day">Rate per Day (in local currency, optional)</label>
+                  <input type="number" id="rate-per-day" name="rate-per-day" class="form-input" min="1" step="0.01">
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="availability">Availability *</label>
+                  <select id="availability" name="availability" class="form-select" required>
+                    <option value="">Select availability</option>
+                    <option value="weekdays">Weekdays Only</option>
+                    <option value="weekends">Weekends Only</option>
+                    <option value="all">All Days</option>
+                    <option value="custom">Custom Schedule</option>
+                  </select>
+                </div>
+                
+                <div class="form-group" id="custom-availability-group" style="display: none;">
+                  <label for="custom-availability">Custom Availability Details</label>
+                  <textarea id="custom-availability" name="custom-availability" class="form-textarea" rows="3" placeholder="Please specify your availability (e.g., Monday-Wednesday, 9 AM - 5 PM)"></textarea>
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="service-area">Service Area/City *</label>
+                  <input type="text" id="service-area" name="service-area" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="pickup-location">Preferred Pickup Location *</label>
+                  <input type="text" id="pickup-location" name="pickup-location" class="form-input" required>
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group full-width">
+                  <label for="additional-features">Additional Vehicle Features</label>
+                  <textarea id="additional-features" name="additional-features" class="form-textarea" rows="3" placeholder="e.g., GPS, Bluetooth, Sunroof, Child Seat, etc."></textarea>
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group full-width">
+                  <label for="special-instructions">Special Instructions or Notes</label>
+                  <textarea id="special-instructions" name="special-instructions" class="form-textarea" rows="3" placeholder="Any additional information you'd like to share about your vehicle or rental terms"></textarea>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-section">
+              <h3>Terms and Conditions</h3>
+              
+              <div class="form-row">
+                <div class="form-group checkbox-group">
+                  <input type="checkbox" id="terms-agree" name="terms-agree" required>
+                  <label for="terms-agree">I agree to the <a href="terms.html" target="_blank">Terms and Conditions</a> and <a href="privacy.html" target="_blank">Privacy Policy</a> *</label>
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group checkbox-group">
+                  <input type="checkbox" id="vehicle-condition" name="vehicle-condition" required>
+                  <label for="vehicle-condition">I confirm that my vehicle is in good working condition and meets all safety standards *</label>
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group checkbox-group">
+                  <input type="checkbox" id="information-accurate" name="information-accurate" required>
+                  <label for="information-accurate">I confirm that all information provided is accurate and complete *</label>
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group checkbox-group">
+                  <input type="checkbox" id="marketing-consent" name="marketing-consent">
+                  <label for="marketing-consent">I would like to receive updates, promotions, and news from Heritage Travels</label>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary btn-large">Submit Registration</button>
+              <button type="reset" class="btn btn-outline btn-large">Reset Form</button>
+            </div>
+          </form>
+          
+          <div class="registration-sidebar">
+            <div class="sidebar-card">
+              <h3>Why Register with Us?</h3>
+              <ul class="benefit-list">
+                <li>
+                  <div class="benefit-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                      <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                      <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                    </svg>
+                  </div>
+                  <span>Earn extra income from your vehicle</span>
+                </li>
+                <li>
+                  <div class="benefit-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                  </div>
+                  <span>Comprehensive insurance coverage</span>
+                </li>
+                <li>
+                  <div class="benefit-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                  </div>
+                  <span>Secure payment processing</span>
+                </li>
+                <li>
+                  <div class="benefit-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="9" cy="7" r="4"></circle>
+                      <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                  </div>
+                  <span>Access to a wide customer base</span>
+                </li>
+                <li>
+                  <div class="benefit-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="12" y1="8" x2="12" y2="12"></line>
+                      <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                  </div>
+                  <span>24/7 customer support</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="sidebar-card">
+              <h3>Registration Process</h3>
+              <ol class="process-list">
+                <li>
+                  <span class="process-number">1</span>
+                  <div class="process-content">
+                    <h4>Submit Registration</h4>
+                    <p>Fill out the form with your personal and vehicle details</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="process-number">2</span>
+                  <div class="process-content">
+                    <h4>Verification</h4>
+                    <p>Our team will verify your information and documents</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="process-number">3</span>
+                  <div class="process-content">
+                    <h4>Vehicle Inspection</h4>
+                    <p>Schedule a quick inspection of your vehicle</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="process-number">4</span>
+                  <div class="process-content">
+                    <h4>Approval</h4>
+                    <p>Get approved and set up your driver profile</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="process-number">5</span>
+                  <div class="process-content">
+                    <h4>Start Earning</h4>
+                    <p>Begin accepting bookings and earning money</p>
+                  </div>
+                </li>
+              </ol>
+            </div>
+            
+            <div class="sidebar-card">
+              <h3>Need Help?</h3>
+              <p>If you have any questions about the registration process, please contact our support team:</p>
+              <div class="contact-info">
+                <div class="contact-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                  <span>+1 (555) 123-4567</span>
+                </div>
+                <div class="contact-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                  <span>drivers@heritagetravels.com</span>
+                </div>
+                <div class="contact-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                  <span>Mon-Fri: 9am-6pm</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <p class="copyright">© 2025 Heritage Travels. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="terms.html">Terms</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/index.js"></script>
+  <script src="/Become a Driver/driver.js"></script>
+</body>
+</html>
