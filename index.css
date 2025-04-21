@@ -113,7 +113,7 @@ img {
     justify-content: space-between;
 }
 
-.logo {
+.logo  {
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -121,6 +121,12 @@ img {
     font-weight: 700;
     color: var(--primary);
     text-decoration: none;
+}
+
+.logo img{
+    height: 50px;
+    width: 100px;
+    vertical-align: middle;
 }
 
 .main-nav {
