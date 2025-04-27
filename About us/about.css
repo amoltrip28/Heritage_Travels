@@ -1,0 +1,144 @@
+/* About Us Page Styles */
+
+/* Hero Section */
+.about-hero {
+    position: relative;
+    height: 300px;
+    background-image: url('https://placehold.co/1200x300');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  /* About Section */
+  .about-section {
+    padding: 3rem 0;
+    background-color: var(--background);
+  }
+  
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .about-content h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+  
+  .about-content p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+  
+  .about-image {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .rounded-image {
+    border-radius: var(--radius);
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Mission & Values Section */
+  .mission-section {
+    padding: 3rem 0;
+    background-color: var(--muted);
+  }
+  
+  .mission-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .mission-card {
+    background-color: var(--card);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .mission-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mission-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 9999px;
+    background-color: rgba(0, 112, 243, 0.1);
+    color: var(--primary);
+    margin-bottom: 1rem;
+  }
+  
+  .mission-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+  
+  .mission-card p {
+    color: var(--muted-foreground);
+    line-height: 1.6;
+  }
+  
+  /* Team Section */
+  .team-section {
+    padding: 3rem 0;
+    background-color: var(--background);
+  }
+  
+  .team-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .team-member {
+    text-align: center;
+  }
+  
+  .member-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 9999px;
+    overflow: hidden;
+    margin: 0 auto 1.5rem;
+  }
+  
+  .member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .team-member h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+  
+  .member-role {
+    color: var(--primary);
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+  }
+  
+  .member-bio {
+    color: var(--muted-foreground);
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
