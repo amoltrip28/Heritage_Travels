@@ -254,3 +254,24 @@
 .cta-section .btn-outline:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
+
+/* Responsive Styles */
+@media (min-width: 640px) {
+  .cta-buttons {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 768px) {
+  .about-hero {
+    height: 400px;
+  }
+  
+  .mission-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
