@@ -274,4 +274,19 @@
   .team-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .timeline::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .timeline-item {
+    padding-left: 0;
+    width: 50%;
+  }
+  
+  .timeline-item:nth-child(odd) {
+    padding-right: 2.5rem;
+    text-align: right;
+  }
 }
