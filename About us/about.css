@@ -310,4 +310,9 @@
   .about-grid {
     grid-template-columns: 3fr 2fr;
   }
+
+  .mission-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
 }
