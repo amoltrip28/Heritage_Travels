@@ -315,4 +315,7 @@
     grid-template-columns: repeat(3, 1fr);
   }
   
+  .team-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
